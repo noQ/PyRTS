@@ -1,0 +1,58 @@
+$def with (hdoc, methods)
+<!DOCTYPE html>
+<html>
+<head>
+<title>REST Documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+<!--
+body {
+    background-color:#EEEEEE;
+}
+.normaltext {
+    font-family: verdana;
+    font-size: 12px;
+}
+.hhh {
+    font-family: verdana;
+    font-size: 24px;
+	font-weight: bold;
+}
+.hh {
+    font-family: verdana;
+    font-size: 18px;
+    font-weight: bold;
+}
+.hdr {
+    background-color:#000066;
+	color:#EEEEEE;
+}
+.code {
+    background-color:#CCCCCC;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+    <div class="normaltext">
+        <span class="hhh">$hdoc</span><br/><br/>
+        $for methoddata in methods:
+			<table width="100%" cellspacing="0" cellpadding="6">
+			<tr>
+			<td class="hdr">
+            <span class="hh">$methoddata[0]
+            ($methoddata[1]['args'])
+            </span>
+			</td>
+			</tr>
+			<tr>
+			<td class="code">
+            <pre>$methoddata[1]['doc']</pre>
+			</td>
+			</tr>
+			</table>
+			<br/>
+    </div>
+</body>
+</html>
